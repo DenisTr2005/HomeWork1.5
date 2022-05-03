@@ -48,6 +48,48 @@ public class Main {
                 arr[i]++;
             }
         }
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr) + "\n");
+        System.out.println("Задание 5");
+        int[][] matrix = new int[3][3];
+        for (i = 0; i < matrix.length; i++) {
+            matrix[i][i] = 1;
+            matrix[matrix.length- i - 1][i] = matrix[i][i];
+        }
+        for (int[] row : matrix) {
+            for (int column : row) {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("\nЗадание 6");
+        int[] arr5 = {5, 4, 3, 2, 1};
+        System.out.println(Arrays.toString(arr5));
+        int[] arrNew = new int[arr5.length];
+        for (i = 0; i < arr5.length; i++) {
+            arrNew[arr5.length-i-1] = arr5[i];
+        }
+        System.out.println(Arrays.toString(arrNew));
+        System.out.println("\nЗадание 7");
+        System.out.println(Arrays.toString(arr5));
+        for (i = 0; i < arr5.length/2; i++) {
+            int buffer = arr5[i];
+            arr5[i] = arr5[arr5.length - i - 1];
+            arr5[arr5.length - i - 1] = buffer;
+
+        }
+        System.out.println(Arrays.toString(arr5));
+        System.out.println("\nЗадание 8, 9");
+        int[] arr8 = {-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+        int a, b;
+        System.out.println("числа в массиве " + Arrays.toString(arr8) + ", сумма которых равна -2:");
+        for (i = 0; i < arr8.length - 1; i++) {
+            a = arr8[i];
+            for (int j = i + 1; j < arr8.length; j++) {
+                b = arr8[j];
+                if (a + b == -2) {
+                    System.out.println(a + " (" + (i+1) + "-е число в массиве), " + b + " (" + (j+1) + "-е число в массиве)");
+                }
+            }
+        }
     }
 }
